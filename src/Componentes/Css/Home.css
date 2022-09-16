@@ -1,0 +1,39 @@
+.Container-Principal-Home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.Foto-Home{
+    width: 20%;
+    /* transform: rotate(45deg); */
+}
+.Foto-patitas{
+    position: fixed;
+    display: flex;
+}
+.Foto-patitas-abajo{
+    position: fixed;
+    
+}
+.Boton-Home{
+    width: 120px;
+    height: 30px;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(202, 210, 216);
+    transition: all 0.3s;
+    font-weight: bold;
+}
+.Boton-Home:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    outline: black solid 1px;
+}
+.Link{
+    text-decoration: none;
+}
