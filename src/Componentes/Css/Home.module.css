@@ -8,6 +8,7 @@
 .Foto-Home{
     width: 20%;
     /* transform: rotate(45deg); */
+    animation: pepe 1s ;
 }
 .Foto-patitas{
     position: fixed;
@@ -15,7 +16,8 @@
 }
 .Foto-patitas-abajo{
     position: fixed;
-    
+    bottom: 0px;
+    right: 0px;
 }
 .Boton-Home{
     width: 120px;
@@ -36,4 +38,23 @@
 }
 .Link{
     text-decoration: none;
+}
+.container-principal-home-page {
+    animation: fadein 2s; 
+}
+@keyframes fadein {
+    0% {
+    opacity:0;
+    }
+    100% {
+    opacity:1;
+    }
+}
+@keyframes pepe {
+    0% {
+        transform: scale(.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
