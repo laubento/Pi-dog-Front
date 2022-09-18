@@ -12,7 +12,6 @@ export function getDogs(){
 
 export function Verificacion(payload){
     return function(dispatch){
-        console.log('entre action')
         return dispatch({
             type: "VERIFICACION",
             payload

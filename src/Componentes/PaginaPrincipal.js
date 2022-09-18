@@ -8,25 +8,30 @@ import { Verificacion } from "../redux/actions.js";
 
 export default function PaginaPrincipal(){
 
+    //Constantes
     const dispatch = useDispatch()
     const allDogs = useSelector((state) => state.dogs)
     const [pageDogs, setpageDogs] = useState(8)
     const [pageDogsInit, setpageDogsInit] = useState(0)
     const [page, setpage] = useState(0)
-    const pepe =  allDogs.slice(pageDogsInit, pageDogs)
-    console.log(pepe)
+    const [cambios, setcambios] = useState(0)
+    var pepe =  allDogs.slice(pageDogsInit, pageDogs)
 
     // Para que se ejecute siempre que exista un cambio
     useEffect(() => {
         dispatch(getDogs())
     }, [])
+
+    // Inutil por ahora
     function handleClick(e){
         e.preventDefault()
     }
 
-    function verificacion(e){
-        console.log('ejecuto verificacion')
+    // Funcion para filtro A - Z
+    async function verificacion(e){
         dispatch(Verificacion(e.target.value))
+        pepe = await allDogs.slice(pageDogsInit, pageDogs)
+        setcambios(cambios + 1)
     }
 
     // Funciones para moverse entre paginas
