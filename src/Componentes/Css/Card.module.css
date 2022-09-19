@@ -1,7 +1,34 @@
 .container-principal{
-    background-color: bisque;
+    background-color: #F9F5EB;
+    height: 200px;
+    width: 250px;
+    position: relative;
+    border-radius: 10%;
+    margin: 20px;
 }
 .img{
-    height: 200px;
+    height: 150px;
     width: 200px;
 }   
+.titulo{
+    font-size: 20px;
+    font-family: 'Acme', sans-serif;
+    color: #000000;
+    margin: 10px;
+}
+.globito{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transform: rotate(-30deg);
+}
+.globitoAbajo{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    bottom: 1%;
+    right: 2%;
+    transform: rotate(-30deg);
+}

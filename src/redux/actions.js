@@ -18,3 +18,29 @@ export function Verificacion(payload){
         })
     }
 }
+
+export function VerificacionBd(payload){
+    return function(dispatch){
+        return dispatch({
+            type: "VERIFICACIONBD",
+            payload
+        })
+    }
+}
+
+export function VerificacionTamano(payload){
+    return function(dispatch){
+        return dispatch({
+            type: "VERIFICACIONTAMANO",
+            payload
+        })
+    }
+}
+
+export function Refresh(){
+    return function(dispatch){
+        return dispatch({
+            type: "REFRESH"
+        })
+    }
+}

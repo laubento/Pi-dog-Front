@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getDogs } from "../redux/actions.js";
 import Card from "./Card.js";
-import { Verificacion } from "../redux/actions.js";
+import { Verificacion, VerificacionBd, VerificacionTamano, Refresh } from "../redux/actions.js";
+import style from './Css/PaginaPrincipal.module.css'
 
 export default function PaginaPrincipal(){
 
@@ -20,18 +21,41 @@ export default function PaginaPrincipal(){
     // Para que se ejecute siempre que exista un cambio
     useEffect(() => {
         dispatch(getDogs())
-    }, [])
+    })
 
     // Inutil por ahora
     function handleClick(e){
         e.preventDefault()
+        dispatch(Refresh())
+        setcambios(cambios - 1)
+        setpage(0)
+        setpageDogs(8)
+        setpageDogsInit(0)
     }
 
     // Funcion para filtro A - Z
     async function verificacion(e){
         dispatch(Verificacion(e.target.value))
-        pepe = await allDogs.slice(pageDogsInit, pageDogs)
         setcambios(cambios + 1)
+        setpageDogs(8)
+        setpageDogsInit(0)
+        setpage(0)
+    }    
+    // Funcion para filtro BASE DATOS
+    async function verificacionBd(e){
+        dispatch(VerificacionBd(e.target.value))
+        setcambios(cambios - 1)
+        setpageDogs(8)
+        setpageDogsInit(0)
+        setpage(0)
+    }
+    // Funcion para filtro tamano
+    async function verificacionTamano(e){
+        dispatch(VerificacionTamano(e.target.value))
+        setcambios(cambios + 1)
+        setpageDogs(8)
+        setpageDogsInit(0)
+        setpage(0)
     }
 
     // Funciones para moverse entre paginas
@@ -53,30 +77,37 @@ export default function PaginaPrincipal(){
         <div>
             <h3>pag: {page}</h3>
             <h1>Pagina principal</h1>
+            <div className={style["container-fotoInicio"]}></div>
             <button onClick={e => {pagSum()}}> + </button>
             <button onClick={e => {pagRes()}}> - </button>
             <Link to={'/createdog'}>Crear personaje</Link>
-            <button onClick={e => {handleClick(e)}}>Refrescar</button>
+            <button onClick={e => {handleClick(e)}}>Restablecer</button>
             <div>
                 <select onChange={e => {verificacion(e)}}>
                     <option value={'Ascendente'}>Ascendente</option>
                     <option value={'Descendente'}>Descendente</option>
                 </select>
-                <select>
+                <select onChange={e => {verificacionBd(e)}}>
                     <option value={'All'}>All</option>
+                    <option value={'Web'}>En la web</option>
                     <option value={'createForMe'}>Create for me</option>
                 </select>
-                <select>
-                    <option></option>
+                <select onChange={e => {verificacionTamano(e)}}>
+                    <option value={'All'}>All</option>
+                    <option value={'Small'}>Small</option>
+                    <option value={'Big'}>Big</option>
                 </select>
             </div>
-            {pepe.length > 0 ? pepe.map((e, i) => {
-                return(
-                    <div key={i}>
-                        <Card name={e.name} imagen={e.img} />
-                    </div>
-                )
-            }) : <h1>No se encontro el perrito</h1>}
+            <div className={style.containerCards}>
+                {pepe.length > 0 ? pepe.map((e, i) => {
+                    console.log(e.peso)
+                    return(
+                        <div key={i}>
+                            <Card name={e.name} imagen={e.img} />
+                        </div>
+                    )
+                }) : <h1>No se encontro el perrito</h1>}
+            </div>
         </div>
     )
 

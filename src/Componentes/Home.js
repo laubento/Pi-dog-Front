@@ -10,10 +10,16 @@ export default function Home(){
             <img alt="Home" src={patitas} className={style["Foto-patitas"]}/>
             <img alt="Home" src={patitas} className={style["Foto-patitas-abajo"]}/>
             <div className={style["Container-Principal-Home"]}>
-                <img alt="Home" src={home} className={style["Foto-Home"]}/>
-                <Link to="/home" className={style["Link"]}>
-                    <div className={style["Boton-Home"]}>Entrar</div>
-                </Link>
+                <div className={style.cointainerTitulo}>
+                    <h1 className={style.titulo}>Proyect Dogs Api</h1>
+                    <p>En esta pagina podras ver todas las razas de perros, e incluso crear tu "Dog"</p>
+                </div>
+                <div className={style.containerImg}>
+                    <img alt="Home" src={home} className={style["Foto-Home"]}/>
+                    <Link to="/home" className={style["Link"]}>
+                        <div className={style["Boton-Home"]}>Entrar</div>
+                    </Link>
+                </div>
             </div>
         </div>
     )
