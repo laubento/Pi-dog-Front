@@ -21,7 +21,7 @@ export default function PaginaPrincipal(){
     // Para que se ejecute siempre que exista un cambio
     useEffect(() => {
         dispatch(getDogs())
-    })
+    }, [])
 
     // Inutil por ahora
     function handleClick(e){
@@ -93,7 +93,7 @@ export default function PaginaPrincipal(){
                     <option value={'createForMe'}>Create for me</option>
                 </select>
                 <select onChange={e => {verificacionTamano(e)}}>
-                    <option value={'All'}>All</option>
+                    <option value={'All'}>Tamano</option>
                     <option value={'Small'}>Small</option>
                     <option value={'Big'}>Big</option>
                 </select>
