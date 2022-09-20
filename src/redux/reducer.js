@@ -1,6 +1,8 @@
 const initialState = {
     dogs : [],
-    allDogs: []
+    allDogs: [],
+    loading: false,
+    pag: []
 }
 
 export default function reducer(state = initialState, action){
@@ -10,7 +12,11 @@ export default function reducer(state = initialState, action){
             return {
                 ...state,
                 dogs: action.payload,
-                allDogs : action.payload
+            }
+        case 'TRAER_PERROS_ALL':
+            return{
+                ...state,
+                allDogs: action.payload
             }
         case 'VERIFICACION':
             console.log('verificacion')
@@ -26,6 +32,7 @@ export default function reducer(state = initialState, action){
                     if(b.name > a.name)return 1
                     return 0
                 })
+            console.log(state.allDogs.slice(0, 3))
             return {
                 ...state,
                 dogs: pepa
@@ -51,17 +58,34 @@ export default function reducer(state = initialState, action){
                     if(a.peso.slice(0,2) > b.peso.slice(0,2))return -1
                     if(b.peso.slice(0,2) > a.peso.slice(0,2))return 1
                     return 0
-                })
-                console.log(state.allDogs.slice(0, 3))
+            })
+            console.log(state.allDogs.slice(0, 3))
             return{
                 ...state,
-                dogs : action.payload === 'All' ? [] : dogsTamano
+                dogs : action.payload === 'All' ? state.allDogs : dogsTamano
             }
         case 'REFRESH':
             console.log('ejecuto')
             return{
                 ...state,
                 dogs: state.allDogs
+            }
+        case 'LOADING':
+            return{
+                ...state,
+                loading: action.payload
+            }
+        case 'INCREMENTO':
+            console.log('entro')
+            console.log(state.dogs)
+            console.log(action.payload.min)
+            console.log(action.payload.max)
+            console.log(state.dogs)
+            let paginado = state.dogs.slice(0 + action.payload.min, 0 + action.payload.max)
+            console.log('lolo', paginado)
+            return{
+                ...state,
+                pag: paginado
             }
         default:
             return state

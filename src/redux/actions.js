@@ -1,10 +1,19 @@
 import axios from 'axios'
 
-export function getDogs(){
+export  function getDogs(){
     return async function(dispatch){
         var pepe = await axios.get("http://localhost:3001/dogs")
         return dispatch({
             type: 'TRAER_PERROS',
+            payload: pepe.data
+        })
+    }
+}
+export  function getAllDogs(){
+    return async function(dispatch){
+        var pepe = await axios.get("http://localhost:3001/dogs")
+        return dispatch({
+            type: 'TRAER_PERROS_ALL',
             payload: pepe.data
         })
     }
@@ -44,3 +53,13 @@ export function Refresh(){
         })
     }
 }
+
+export function Incremento(payload){
+    return function(dispatch){
+        return dispatch({
+            type: 'INCREMENTO',
+            payload
+        })
+    }
+}
+

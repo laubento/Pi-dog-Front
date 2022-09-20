@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getDogs } from "../redux/actions.js";
 import Card from "./Card.js";
-import { Verificacion, VerificacionBd, VerificacionTamano, Refresh } from "../redux/actions.js";
+import { getAllDogs ,Verificacion, VerificacionBd, VerificacionTamano, Refresh, Incremento  } from "../redux/actions.js";
 import style from './Css/PaginaPrincipal.module.css'
 
 export default function PaginaPrincipal(){
@@ -12,16 +12,20 @@ export default function PaginaPrincipal(){
     //Constantes
     const dispatch = useDispatch()
     const allDogs = useSelector((state) => state.dogs)
+    const pag = useSelector((state) => state.pag)
     const [pageDogs, setpageDogs] = useState(8)
     const [pageDogsInit, setpageDogsInit] = useState(0)
     const [page, setpage] = useState(0)
     const [cambios, setcambios] = useState(0)
-    var pepe =  allDogs.slice(pageDogsInit, pageDogs)
+    let pepe = allDogs.slice(pageDogsInit, pageDogs)
 
     // Para que se ejecute siempre que exista un cambio
-    useEffect(() => {
+     useEffect( () => {
         dispatch(getDogs())
+        dispatch(getAllDogs())
     }, [])
+    
+
 
     // Inutil por ahora
     function handleClick(e){
@@ -57,6 +61,7 @@ export default function PaginaPrincipal(){
         setpageDogsInit(0)
         setpage(0)
     }
+
 
     // Funciones para moverse entre paginas
     function pagSum(){
@@ -106,9 +111,8 @@ export default function PaginaPrincipal(){
                             <Card name={e.name} imagen={e.img} />
                         </div>
                     )
-                }) : <h1>No se encontro el perrito</h1>}
+                }) : <h1> No se encontro el perrito</h1>}
             </div>
         </div>
     )
-
 }
