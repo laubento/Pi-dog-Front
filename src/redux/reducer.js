@@ -1,14 +1,13 @@
 const initialState = {
     dogs : [],
     allDogs: [],
-    loading: false,
-    pag: []
+    temperamentos: []
 }
 
 export default function reducer(state = initialState, action){
     switch(action.type){
+        // Traer informacion para el state
         case 'TRAER_PERROS':
-            console.log('eadsadsa')
             return {
                 ...state,
                 dogs: action.payload,
@@ -18,9 +17,20 @@ export default function reducer(state = initialState, action){
                 ...state,
                 allDogs: action.payload
             }
+        case 'TRAER_TEMPERAMENTOS':
+            return{
+                ...state,
+                temperamentos: action.payload
+            }
+        // Busqueda por input
+        case 'BUSQUEDA':
+            let inputBusqueda = state.allDogs.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase()))
+            return{
+                ...state,
+                dogs: inputBusqueda
+            }
+        // Filtrados
         case 'VERIFICACION':
-            console.log('verificacion')
-            console.log(state.allDogs.slice(0, 3))
             let pepa = action.payload === 'Ascendente' ? 
             state.dogs.sort(function (a, b) {
                 if(a.name > b.name)return 1
@@ -32,22 +42,32 @@ export default function reducer(state = initialState, action){
                     if(b.name > a.name)return 1
                     return 0
                 })
-            console.log(state.allDogs.slice(0, 3))
             return {
                 ...state,
-                dogs: pepa
+                dogs: pepa,
+                allDogs: state.allDogs
             }
         case 'VERIFICACIONBD':
-            console.log('verificacionBd')
-            console.log(state.allDogs.slice(0, 3))
             let dogsBd = action.payload === 'createForMe' ?  state.allDogs.filter(e => e.createInBd) : state.allDogs.filter(e => !e.createInBd)
             return{
                 ...state,
-                dogs : action.payload === 'All' ? state.allDogs : dogsBd
+                dogs : action.payload === 'All' ? state.allDogs : dogsBd,
+                allDogs: state.allDogs
+            }
+        case 'VERIFICACION_TEMPERAMENTO':
+            let array = []
+            for(let i = 0; i < state.allDogs.length; i++){
+                for(let a = 0; a < state.allDogs[i].temperamento.length; a++){
+                    if(state.allDogs[i].temperamento[a] === action.payload){
+                        array.push(state.allDogs[i])
+                    }
+                }
+            }
+            return {
+                ...state,
+                dogs: array
             }
         case 'VERIFICACIONTAMANO':
-            console.log('verificacionTamano')
-            console.log(state.allDogs.slice(0, 3))
             let dogsTamano = action.payload === 'Small' ? 
             state.dogs.sort(function (a, b) {
                 if(a.peso.slice(0,2) > b.peso.slice(0,2)) return 1
@@ -59,34 +79,21 @@ export default function reducer(state = initialState, action){
                     if(b.peso.slice(0,2) > a.peso.slice(0,2))return 1
                     return 0
             })
-            console.log(state.allDogs.slice(0, 3))
             return{
                 ...state,
-                dogs : action.payload === 'All' ? state.allDogs : dogsTamano
+                dogs : dogsTamano,
             }
+
         case 'REFRESH':
-            console.log('ejecuto')
+            document.getElementById('Tamano').value = 'Size'
+            document.getElementById('Base').value = 'All'
+            document.getElementById('A-Z').value = 'Ascendente'
+            document.getElementById('Breed').value = 'Breeds'
             return{
                 ...state,
-                dogs: state.allDogs
+                dogs: action.payload,
             }
-        case 'LOADING':
-            return{
-                ...state,
-                loading: action.payload
-            }
-        case 'INCREMENTO':
-            console.log('entro')
-            console.log(state.dogs)
-            console.log(action.payload.min)
-            console.log(action.payload.max)
-            console.log(state.dogs)
-            let paginado = state.dogs.slice(0 + action.payload.min, 0 + action.payload.max)
-            console.log('lolo', paginado)
-            return{
-                ...state,
-                pag: paginado
-            }
+
         default:
             return state
     }

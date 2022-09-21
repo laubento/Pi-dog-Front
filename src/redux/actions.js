@@ -18,6 +18,15 @@ export  function getAllDogs(){
         })
     }
 }
+export function getTemperament(){
+    return async function(dispatch){
+        var pepe = await axios.get("http://localhost:3001/temperaments")
+        return dispatch({
+            type: 'TRAER_TEMPERAMENTOS',
+            payload: pepe.data
+        })
+    }
+}
 
 export function Verificacion(payload){
     return function(dispatch){
@@ -37,6 +46,15 @@ export function VerificacionBd(payload){
     }
 }
 
+export function VerificacionTemperamento(payload){
+    return function(dispatch){
+        return dispatch({
+            type: 'VERIFICACION_TEMPERAMENTO',
+            payload
+        })
+    }
+}
+
 export function VerificacionTamano(payload){
     return function(dispatch){
         return dispatch({
@@ -47,17 +65,19 @@ export function VerificacionTamano(payload){
 }
 
 export function Refresh(){
-    return function(dispatch){
+    return async function(dispatch){
+        var pepe = await axios.get("http://localhost:3001/dogs")
         return dispatch({
-            type: "REFRESH"
+            type: 'REFRESH',
+            payload: pepe.data
         })
-    }
+    }   
 }
 
-export function Incremento(payload){
+export function Buscar(payload){
     return function(dispatch){
         return dispatch({
-            type: 'INCREMENTO',
+            type: 'BUSQUEDA',
             payload
         })
     }
