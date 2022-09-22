@@ -83,3 +83,20 @@ export function Buscar(payload){
     }
 }
 
+export function getPerroId(id){
+    return async function(dispatch){
+        let pepe = await axios.get(`http://localhost:3001/dogs/${id}`)
+        return dispatch({
+            type: 'PERRO_ID',
+            payload: pepe.data
+        })
+    }   
+}
+export function getPerroIdReset(){
+    return async function(dispatch){
+        return dispatch({
+            type: 'PERRO_ID_RESET',
+        })
+    }   
+}
+

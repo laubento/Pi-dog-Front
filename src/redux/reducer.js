@@ -1,7 +1,8 @@
 const initialState = {
     dogs : [],
     allDogs: [],
-    temperamentos: []
+    temperamentos: [],
+    dog: {}
 }
 
 export default function reducer(state = initialState, action){
@@ -93,7 +94,16 @@ export default function reducer(state = initialState, action){
                 ...state,
                 dogs: action.payload,
             }
-
+        case 'PERRO_ID':
+            return {
+                ...state,
+                dog: action.payload
+            }
+        case 'PERRO_ID_RESET':
+            return {
+                ...state,
+                dog: {}
+            }
         default:
             return state
     }

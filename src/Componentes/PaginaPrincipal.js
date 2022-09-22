@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 // Actions
-import { getDogs, getAllDogs , getTemperament} from "../redux/actions.js";
+import { getDogs, getAllDogs , getTemperament, getPerroIdReset} from "../redux/actions.js";
 // Componentes
 import NavBar from "./NavBar.js";
 import Filtrado from "./Filtrado.js";
@@ -12,7 +12,7 @@ import Paginado from "./Paginado.js";
 import RefreshButton from "./Refresh.js";
 import RenderCard from "./RenderCard.js";
 // Estilo
-import style from './Css/PaginaPrincipal.module.css'
+// import style from './Css/PaginaPrincipal.module.css'
 
 export default function PaginaPrincipal(){
 
@@ -30,6 +30,7 @@ export default function PaginaPrincipal(){
         dispatch(getDogs())
         dispatch(getAllDogs())
         dispatch(getTemperament())
+        dispatch(getPerroIdReset())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
