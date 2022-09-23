@@ -58,9 +58,17 @@ export default function reducer(state = initialState, action){
         case 'VERIFICACION_TEMPERAMENTO':
             let array = []
             for(let i = 0; i < state.allDogs.length; i++){
-                for(let a = 0; a < state.allDogs[i].temperamento.length; a++){
-                    if(state.allDogs[i].temperamento[a] === action.payload){
-                        array.push(state.allDogs[i])
+                if(state.allDogs[i].temperamento !== undefined){
+                    for(let a = 0; a < state.allDogs[i].temperamento.length; a++){
+                        if(state.allDogs[i].temperamento[a] === action.payload){
+                            array.push(state.allDogs[i])
+                        }
+                    }
+                }else{
+                    for(let a = 0; a < state.allDogs[i].temperamentos.length; a++){
+                        if(state.allDogs[i].temperamentos[a].name === action.payload){
+                            array.push(state.allDogs[i])
+                        }
                     }
                 }
             }
@@ -104,6 +112,9 @@ export default function reducer(state = initialState, action){
                 ...state,
                 dog: {}
             }
+        case 'POST_DOG':
+            console.log('ok')
+            return state
         default:
             return state
     }

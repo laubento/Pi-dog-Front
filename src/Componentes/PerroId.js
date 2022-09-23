@@ -26,6 +26,12 @@ export default function PerroId(){
                 )
             }) : null}
             </ul>
+            <ul>{Dog.temperamentos ? Dog.temperamentos.map((e, i) => {
+                return(
+                    <li key={i}>{e.name}</li>
+                )
+            }) : null}
+            </ul>
             <h1>{Dog.criadoPara}</h1>
         </div>
     )

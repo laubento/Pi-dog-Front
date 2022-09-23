@@ -12,7 +12,8 @@ export default function RenderCard({pag}){
                     <Card 
                         name={e.name} 
                         imagen={e.img} 
-                        Temperamento={e.temperamento} 
+                        Temperamento={e.createInBd ? e.temperamentos.map(e => e.name) : e.temperamento}
+                        checkBD={e.createInBd}
                         Peso={e.peso} 
                     />
                 </div>

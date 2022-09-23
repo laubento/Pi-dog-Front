@@ -100,3 +100,11 @@ export function getPerroIdReset(){
     }   
 }
 
+export function postDog(input){
+    return async function(dispatch){
+        await axios.post(`http://localhost:3001/dogs`, input)
+        return dispatch({
+            type: 'POST_DOG',
+        })
+    }   
+}
