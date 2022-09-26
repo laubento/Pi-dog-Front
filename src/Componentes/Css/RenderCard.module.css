@@ -1,6 +1,13 @@
 .ContainerPrincipal{
     display: grid;
     grid-template-columns:  auto auto auto auto;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: center;
 }
+
+.link{
+    text-decoration: none;
+    margin: 0px;
+}
+
 

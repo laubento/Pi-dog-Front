@@ -1,9 +1,14 @@
-
-
 body{
-    background-image: url("../../img/fondo.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed ;
-    background-position: center center;
+    animation: fadein 0.2s;
 }
+
+
+@keyframes fadein {
+    0% {
+    background-color: aliceblue;
+    }
+    100% {
+    background-color: black;
+    }
+}
+

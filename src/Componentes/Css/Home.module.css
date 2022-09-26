@@ -1,3 +1,7 @@
+body{
+    background: #ead3be;
+}
+
 .Container-Principal-Home{
     display: flex;
     justify-content: center;

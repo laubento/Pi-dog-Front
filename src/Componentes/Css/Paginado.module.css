@@ -1,0 +1,15 @@
+.active{
+    color: brown;
+    margin: 10px;
+
+}
+.desactive{
+    color: blue;
+    margin: 10px;
+}
+
+.containerPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

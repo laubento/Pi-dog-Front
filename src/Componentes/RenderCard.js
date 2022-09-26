@@ -8,7 +8,7 @@ export default function RenderCard({pag}){
         <div className={style.ContainerPrincipal}>
             {pag.length > 0 ? pag.map((e, i) => {
             return(
-                <Link key={i} to={`/dog/${e.id}`}>
+                <Link className={style.link} key={i} to={`/dog/${e.id}`}>
                 <div key={e.id}>
                     <Card 
                         name={e.name} 

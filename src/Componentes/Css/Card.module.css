@@ -1,19 +1,21 @@
 .container-principal{
-    background-color: #F9F5EB;
-    /* height: 200px;
-    width: 250px; */
+    background-color: #6c4e2f;
+    height: 400px;
+    width: 250px;
     position: relative;
-    border-radius: 10%;
+    border-radius: 20px;
     margin: 20px;
+    padding-top: 5px;
 }
 .img{
     height: 150px;
     width: 200px;
+    border-radius: 10px;
 }   
 .titulo{
     font-size: 20px;
     font-family: 'Acme', sans-serif;
-    color: #000000;
+    color: #f5e9de;
     margin: 10px;
 }
 .globito{
@@ -31,4 +33,25 @@
     bottom: 1%;
     right: 2%;
     transform: rotate(-30deg);
+}
+.temperamentosHome {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.temperamentosHomeLI{
+    text-decoration: none;
+    list-style: none;
+    margin: 5px;
+    color: #472502;
+    background-color: #c8a480;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 13px;
 }
