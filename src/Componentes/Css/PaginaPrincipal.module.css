@@ -1,15 +1,9 @@
-.containerCards{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-/* .container-fotoInicio{
-    background: url("../../img/pugsito.jpg");
+
+
+body{
+    background-image: url("../../img/fondo.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 400px;
-    width: 600px;
-} */
+    background-attachment: fixed ;
+    background-position: center center;
+}

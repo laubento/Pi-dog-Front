@@ -2,7 +2,7 @@ import React from "react";
 import style from './Css/Card.module.css'
 import patitas from '../img/patitasPag.png'
 
-export default function Card({name, imagen, Temperamento, Peso, checkBD}){
+export default function Card({name, imagen, Temperamento, Peso}){
     return(
         <div className={style["container-principal"]}>
             <img className={style.globito} src={patitas} alt="patitas"/>

@@ -9,9 +9,22 @@
 .titulo{
     font-family: 'Montserrat';
     font-weight: bold;
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 50%;
-    border-radius: 40%;
+    /* border-radius: 10%; */
+    position: absolute;
+    top: 43%;
+    color: #331c05 ;
+}
+.FotoPerros{
+    position: absolute;
+    height: 25vh;
+    top: 62%;
+}
+.parrafo{
+    position: absolute;
+    top: 53%;
+
 }
 .cointainerTitulo{
     display: flex;
@@ -23,15 +36,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    animation: pepe 1s ;
 }
 .Foto-Home{
     /* width: 20%; */
     /* transform: rotate(45deg); */
-    animation: pepe 1s ;
+    /* animation: pepe 1s ; */
+    height: 80vh;
 }
 .Foto-patitas{
     position: fixed;
     display: flex;
+}
+.linkedin{
+    position: fixed;
+    bottom: 2%;
+    height: 8%;
+    left: 2%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.github{
+    position: fixed;
+    bottom: 2%;
+    left: 7%;
+    height: 8%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.linkedin:hover{
+    height: 9%;
+}
+.github:hover{
+    height: 9%;
 }
 .Foto-patitas-abajo{
     position: fixed;
@@ -41,25 +80,28 @@
 .Boton-Home{
     width: 120px;
     height: 30px;
-    background-color: black;
+    background-color: #a88664;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(202, 210, 216);
+    color: #331c05;
     transition: all 0.3s;
     font-weight: bold;
 }
 .Boton-Home:hover{
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: #331c05;
+    color: #a88664;
     outline: black solid 1px;
 }
 .Link{
     text-decoration: none;
+    position: absolute;
+    bottom:  0;
 }
 .container-principal-home-page {
     animation: fadein 2s; 
+    background-color: #f5e9de;
 }
 @keyframes fadein {
     0% {

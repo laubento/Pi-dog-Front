@@ -12,7 +12,7 @@ import Paginado from "./Paginado.js";
 import RefreshButton from "./Refresh.js";
 import RenderCard from "./RenderCard.js";
 // Estilo
-// import style from './Css/PaginaPrincipal.module.css'
+import style from './Css/PaginaPrincipal.module.css'
 
 export default function PaginaPrincipal(){
 
@@ -37,7 +37,7 @@ export default function PaginaPrincipal(){
 
     // El renderizado del componente
     return (
-        <div>
+        <div className={style.ContainerPrincipal}>
             <h1>Pagina principal</h1>
             <h3>pag: {page}</h3>
             <NavBar 
