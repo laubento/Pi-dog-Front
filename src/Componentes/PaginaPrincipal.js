@@ -11,6 +11,7 @@ import Filtrado from "./Filtrado.js";
 import Paginado from "./Paginado.js";
 import RefreshButton from "./Refresh.js";
 import RenderCard from "./RenderCard.js";
+import Image from "./Image.js";
 // Estilo
 import style from './Css/PaginaPrincipal.module.css'
 
@@ -38,8 +39,6 @@ export default function PaginaPrincipal(){
     // El renderizado del componente
     return (
         <div className={style.ContainerPrincipal}>
-            <h1>Pagina principal</h1>
-            <h3>pag: {page}</h3>
             <NavBar 
                 setcambios={setcambios} 
                 setpage={setpage} 
@@ -47,7 +46,7 @@ export default function PaginaPrincipal(){
                 setpageDogsInit={setpageDogsInit} 
                 cambios={cambios}
             />
-            <Link to={'/createdog'}>Crear personaje</Link>
+            <Image />
             <Filtrado  
                 setcambios={setcambios} 
                 setpageDogs={setpageDogs} 

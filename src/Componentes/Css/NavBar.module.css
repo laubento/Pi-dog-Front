@@ -1,0 +1,98 @@
+.containerPrincipal{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #331c05;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.logo{
+    height: 40px;
+    background-color: #a88664;
+    border-radius: 30px;
+    margin: 5px 5px 5px 20px;
+}
+.logoCompleto h1{
+    font-size: 15px;
+    color: #a88664;
+}
+.logoCompleto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ubicacion{
+    display: flex;
+    margin-right: 15px
+}
+.ubicacion h2{
+    margin: 10px;
+    font-size: 15px;
+    color: #a88664;
+}
+.formularioContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hr{
+    border-color: #ebceb0;
+}
+.link{
+    text-decoration: none;
+}
+.create{
+    transition: all 0.3s;
+    height: 23px;
+}
+.create:hover{
+    background-color: #ebceb0;
+    border-radius: 40px;
+}
+.createe:hover{
+    color: #331c05;
+}
+.exit{
+    height: 23px;
+    transition: all 0.3s;
+}
+.exit:hover{
+    background-color: #ebceb0;
+    border-radius: 40px;
+}
+.exitt:hover{
+    color: red;
+}
+.input{
+    background-color: #a88664;
+    border: 0;
+    outline: none;
+    border-radius: 20px;
+    height: 15px;
+    width: 200px;
+    padding: 5px 10px;
+    color: #331c05;
+    font-size: 15px;
+    font-family: 'Acme', sans-serif;
+}
+.button{
+    background-color: #7c4e20;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -30px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #ebceb0;
+}
