@@ -9,7 +9,6 @@ import { getDogs, getAllDogs , getTemperament, getPerroIdReset} from "../redux/a
 import NavBar from "./NavBar.js";
 import Filtrado from "./Filtrado.js";
 import Paginado from "./Paginado.js";
-import RefreshButton from "./Refresh.js";
 import RenderCard from "./RenderCard.js";
 import Image from "./Image.js";
 // Estilo
@@ -53,13 +52,6 @@ export default function PaginaPrincipal(){
                 setpageDogsInit={setpageDogsInit} 
                 setpage={setpage} 
                 cambios={cambios}
-            />
-            <RefreshButton 
-                setcambios={setcambios} 
-                cambios={cambios} 
-                setpage={setpage} 
-                setpageDogs={setpageDogs} 
-                setpageDogsInit={setpageDogsInit} 
             />
             <RenderCard 
                 pag={pag} 

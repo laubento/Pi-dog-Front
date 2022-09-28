@@ -1,0 +1,30 @@
+.containerPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.containerPrincipal h3{
+    color: #7c4e20;
+    margin: 5px 10px;
+}
+
+.container{
+  
+
+}
+
+.container select{
+    background-color: #472502;
+    border-radius: 20px;
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: 'Acme', sans-serif;
+    color: #c8a480;
+    outline: none;
+    border: 0;
+    appearance:none;
+    cursor: pointer;
+}

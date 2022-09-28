@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {Refresh} from "../redux/actions.js";
+import style from './Css/Refresh.module.css'
 
 export default function RefreshButton({setcambios, cambios, setpage, setpageDogs, setpageDogsInit}){
     const dispatch = useDispatch()
@@ -16,6 +17,6 @@ export default function RefreshButton({setcambios, cambios, setpage, setpageDogs
 
 
     return(
-        <button onClick={e => {handleClick(e)}}>Restablecer</button>
+        <button className={style.button} onClick={e => {handleClick(e)}}>Reset</button>
     )
 }

@@ -5,7 +5,7 @@ export default function Paginado({allDogs, pageDogsInit, pageDogs, page, setpage
     let array = []
     function pee(){
         for(let i = 0; i < Math.ceil(allDogs.length / 8); i++){
-            array.push('.')
+            array.push('o')
         }
     }
     pee()
@@ -26,12 +26,12 @@ export default function Paginado({allDogs, pageDogsInit, pageDogs, page, setpage
     return(
         <div>
             <div className={style.containerPrincipal}>
-                <button onClick={e => {pagRes()}}> - </button>
+                <button className={style.button} onClick={e => {pagRes()}}> - </button>
                     {array.length > 0 ? array.map((e, i) => {
                         console.log(i)
-                        return(<p className={i === page ? style.active : style.desactive} key={i}>{e}</p>)
+                        return(<h4 className={i === page ? style.active : style.desactive} key={i}>{e}</h4>)
                     }) : null}
-                <button onClick={e => {pagSum()}}> + </button>
+                <button className={style.button} onClick={e => {pagSum()}}> + </button>
             </div>
         </div>
     )

@@ -10,6 +10,9 @@ export default function Card({name, imagen, Temperamento, Peso, id}){
             <img className={style.globitoAbajo} src={patitas} alt="patitas"/>
             <Link className={style.link} to={`/dog/${id}`}>
                 <h1 className={style.titulo}>{name}</h1>
+                    <div>
+                        <h5 className={style.peso}>Weight: {Peso}</h5>
+                    </div>
                 <img className={style.img} src={imagen ? imagen : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN4HJhnJo07reTM0Lta1HoTollHloqsqRUVw&usqp=CAU'} alt="Img-Dog"/>
                 <div>
                     <ul className={style.temperamentosHome}>
@@ -19,7 +22,6 @@ export default function Card({name, imagen, Temperamento, Peso, id}){
                             )
                         }) : null}
                     </ul>
-                    <h5>{Peso}</h5>
                 </div>
             </Link>
         </div>

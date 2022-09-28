@@ -5,8 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .img{
     height: 100%;
     width: 900px;
+}
+.titulo{
+    position: absolute;
+    top: 20%;
+    font-family: 'Acme', sans-serif;
+    color: #573a1e;
 }

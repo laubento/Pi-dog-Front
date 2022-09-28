@@ -1,11 +1,15 @@
 .container-principal{
     background-color: #6c4e2f;
-    height: 400px;
+    height: 450px;
     width: 250px;
     position: relative;
     border-radius: 20px;
     margin: 20px;
     padding-top: 5px;
+    transition: all 0.2s;
+}
+.container-principal:hover{
+    transform: scale(1.1);
 }
 .img{
     height: 150px;
@@ -22,7 +26,7 @@
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 10%;
+    top: 0;
     left: 0;
     transform: rotate(-30deg);
 }
@@ -57,4 +61,8 @@
 }
 .link{
     text-decoration: none;
+}
+.peso{
+    color: #472502;
+    margin: 0px 0px 5px 0px;
 }
