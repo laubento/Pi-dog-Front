@@ -1,19 +1,28 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { getPerroId } from "../redux/actions";
 import { useSelector } from "react-redux";
 import style from './Css/PerroID.module.css'
 import { Link } from "react-router-dom";
+import { deleteDog } from "../redux/actions";
+
 
 export default function PerroId(){
     const dispatch = useDispatch()
+    const history = useHistory()
     let {id} = useParams()
     const Dog = useSelector((state) => state.dog)
-
+    console.log(Dog)
     useEffect( () => {
         dispatch(getPerroId(id))
     },[])
+
+    function borrarDog(){
+        dispatch(deleteDog(id))
+        alert('Dog successfully removed')
+        history.push('/home')
+    }
 
     return(
         <div className={style.containerPrincipal}>
@@ -29,6 +38,7 @@ export default function PerroId(){
                             <img className={style.img} src={Dog.img == '' ? 'https://img.pixers.pics/pho_wat(s3:700/FO/30/92/43/30/700_FO30924330_0a69d232ef220ba85df06b617a4b7b7b.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/posters-sombra-de-perro.jpg.jpg' : Dog.img} alt="Img-Dog"/>
                         </div>
                         <Link className={style.link} to={'/home'}><div className={style.Button}>Home</div></Link>
+                        {Dog.createInBd ? <div className={style.ButtonDelete} onClick={borrarDog}>Delete</div> : null}
                     </div>
                     <div className={style.datos}>
                         <div className={style.informacion}>

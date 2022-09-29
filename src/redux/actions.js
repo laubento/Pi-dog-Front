@@ -86,6 +86,7 @@ export function Buscar(payload){
 export function getPerroId(id){
     return async function(dispatch){
         let pepe = await axios.get(`http://localhost:3001/dogs/${id}`)
+        console.log(pepe)
         return dispatch({
             type: 'PERRO_ID',
             payload: pepe.data
@@ -107,4 +108,13 @@ export function postDog(input){
             type: 'POST_DOG',
         })
     }   
+}
+
+export function deleteDog(id){
+    return async function(dispatch){
+        await axios.delete(`http://localhost:3001/dog/${id}`)
+        return dispatch({
+            type: 'DELETE'
+        })
+    }
 }

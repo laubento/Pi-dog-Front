@@ -125,6 +125,8 @@ export default function reducer(state = initialState, action){
         case 'POST_DOG':
             console.log('ok')
             return state
+        case 'DELETE':
+            return state
         default:
             return state
     }

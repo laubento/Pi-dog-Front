@@ -91,12 +91,27 @@
     margin-top: 20px;
     transition: all 0.3s;
 }
+.ButtonDelete{
+    background-color: #6c2f2f;
+    border: solid 1px black;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: all 0.3s;
+    color: #c8a480;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    cursor: pointer;
+}
+.Button:hover{
+    background-color: #c8a480;
+    color: black;
+}
 .link{
     color: #c8a480;
     text-decoration: none;
     font-family: 'Acme', sans-serif;
 }
-.Button:hover{
+.ButtonDelete:hover{
     background-color: #c8a480;
     color: black;
 }
