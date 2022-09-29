@@ -49,7 +49,7 @@ export default function Filtrado({setcambios, setpageDogs, setpageDogsInit, setp
             <h3>Filtering</h3>
             <select id="Base" onChange={e => {verificacionBd(e)}}>
                 <option value={'All'}>All</option>
-                <option value={'Web'}>En la web</option>
+                <option value={'Web'}>Web</option>
                 <option value={'createForMe'}>Create for me</option>
             </select>
             <select defaultValue={'Breeds'} id="Breed" onChange={e => {verificacionTemperamento(e)}}>
@@ -70,9 +70,10 @@ export default function Filtrado({setcambios, setpageDogs, setpageDogsInit, setp
             />
         <div className={style.container}>
             <h3>Ordering</h3>
-            <select id="A-Z" onChange={e => {verificacion(e)}}>
-                <option value={'Ascendente'}>Ascendente</option>
-                <option value={'Descendente'}>Descendente</option>
+            <select defaultValue={'abc'} id="A-Z" onChange={e => {verificacion(e)}}>
+                <option id="abc" disabled value={'abc'}>ABC..</option>
+                <option value={'Ascendente'}>A - Z</option>
+                <option value={'Descendente'}>Z - A</option>
             </select>
             <select defaultValue={'Size'} id="Tamano" onChange={e => {verificacionTamano(e)}}>
                 <option id="Size" disabled  value={'Size'}>Size</option>

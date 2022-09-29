@@ -14,11 +14,11 @@ export default function CreateDog(){
     }, [])
 
     const [error, setError] = useState({
-        nombre: 'Ingresa un nombre valido',
-        altura: 'Ingresa solo numeros',
-        peso: 'Ingresa solo numeros',
-        imagen: 'Ingresa un url valida',
-        criadoPara: 'Ingresa solo texto'
+        nombre: '',
+        altura: '',
+        peso: '',
+        imagen: '',
+        criadoPara: ''
     })
 
     const [input, setInput] = useState({
@@ -39,7 +39,50 @@ export default function CreateDog(){
             ...input,
             [e.target.name]: e.target.value
         })
+        setError(validate({
+            ...input,
+            [e.target.name]: e.target.value
+        }))
     }
+
+    function validate(input){
+        let errors = {}
+        if(!input.nombre){
+            errors.nombre = 'Name is required'
+        }
+        else if(input.nombre.length > 30){
+            errors.nombre = 'Too many characters'
+        }
+        else if(true){
+            for(let a = 0; a < input.nombre.length; a++){
+                if(!isNaN(input.nombre[a])){
+                    errors.nombre = 'No numbers allowed'
+                }
+            }
+        }
+        if(!input.pesoMin || !input.pesoMax){
+            errors.peso = 'Weight is required'
+        }
+        if(!/^([0-9])*$/.test(input.pesoMin) || !/^([0-9])*$/.test(input.pesoMax)){
+           errors.peso = 'Only whole numbers are allowed'
+        }
+        else if(Number(input.pesoMin) < 0){
+            errors.peso = 'Weight must be greater than 0'
+        }
+        else if(input.pesoMin.length > 2 || input.pesoMax.length > 2){
+            errors.peso = 'The weight cannot be longer than 2 characters'
+        }
+        else if(input.pesoMin > input.pesoMax){
+            errors.peso = 'Maximum weight must be greater than minimum weight'
+        }
+
+
+        if(Number(input.alturaMin) < 0){
+            errors.altura = 'Altura debe ser mayor a 0'
+        }
+        return errors
+    }
+
 
     function handleSubmit(e){
         e.preventDefault()
@@ -88,6 +131,7 @@ export default function CreateDog(){
                         onChange={handleChange}
                         required
                     /> 
+                    {error.nombre ? <p>{error.nombre}</p> : null}
                     <hr />
                 </div>
                 <div>
@@ -108,6 +152,7 @@ export default function CreateDog(){
                         onChange={handleChange}
                         required
                     /> 
+                    {error.peso ? <p>{error.peso}</p> : null}
                     <hr />
                 </div>
                 <div>
@@ -119,7 +164,7 @@ export default function CreateDog(){
                         placeholder="Min"
                         onChange={handleChange}
                         required
-                    /> 
+                        /> 
                     <input 
                         value={input.alturaMax}
                         type={'text'}
@@ -127,7 +172,8 @@ export default function CreateDog(){
                         placeholder="Max"
                         onChange={handleChange}
                         required
-                    /> 
+                        /> 
+                        {error.altura ? <p>{error.altura}</p> : null}
                     <hr />
                 </div>
                 <div>

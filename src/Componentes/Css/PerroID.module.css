@@ -1,0 +1,102 @@
+.containerPrincipal{
+    background: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-functional-dog-food-promotion-main-map-image_144794.jpg');
+    margin: 30px;
+    height: 90vh;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.difuminado{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.342);
+
+}
+.containerPrincipal h1{
+    font-family: 'Acme', sans-serif;
+}
+.titulo{
+    margin: 0px;
+    color: #c8a480;
+    background-color: #472502;
+    width: 50%;
+    border-radius: 20px;
+}
+.img{
+    height: 300px;
+    width: 400px;
+    border-radius: 30px;
+}
+.containerimg{
+    border-radius: 30px;
+    background-color: #472502;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+    width: 460px;
+}
+.containerTitulo{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    padding: 20px;
+    width: 100%;
+}
+.datos{
+    width: 70%;
+}
+.datos h1{
+    margin: 10px;
+}
+.informacion{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #472502;
+    margin: 0px;
+}
+.informacion h1{
+    text-shadow: 1px 0px #c8a480;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px;
+}
+.temperamentos ul{
+    text-decoration: none;
+    list-style:none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.temperamentos ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #c8a480;
+    color: #472502;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.Button{
+    background-color: #6c4e2f;
+    border: solid 1px black;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+.link{
+    color: #c8a480;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+}
+.Button:hover{
+    background-color: #c8a480;
+    color: black;
+}

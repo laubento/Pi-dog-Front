@@ -25,6 +25,8 @@ export default function reducer(state = initialState, action){
             }
         // Busqueda por input
         case 'BUSQUEDA':
+            document.getElementById('Tamano').value = 'Size'
+            document.getElementById('A-Z').value = 'abc'
             let inputBusqueda = state.allDogs.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase()))
             return{
                 ...state,
@@ -49,6 +51,9 @@ export default function reducer(state = initialState, action){
                 allDogs: state.allDogs
             }
         case 'VERIFICACIONBD':
+            document.getElementById('Breed').value = 'Breeds'
+            document.getElementById('Tamano').value = 'Size'
+            document.getElementById('A-Z').value = 'abc'
             let dogsBd = action.payload === 'createForMe' ?  state.allDogs.filter(e => e.createInBd) : state.allDogs.filter(e => !e.createInBd)
             return{
                 ...state,
@@ -56,6 +61,9 @@ export default function reducer(state = initialState, action){
                 allDogs: state.allDogs
             }
         case 'VERIFICACION_TEMPERAMENTO':
+            document.getElementById('Base').value = 'All'
+            document.getElementById('Tamano').value = 'Size'
+            document.getElementById('A-Z').value = 'abc'
             let array = []
             for(let i = 0; i < state.allDogs.length; i++){
                 if(state.allDogs[i].temperamento !== undefined){
@@ -98,7 +106,7 @@ export default function reducer(state = initialState, action){
         case 'REFRESH':
             document.getElementById('Tamano').value = 'Size'
             document.getElementById('Base').value = 'All'
-            document.getElementById('A-Z').value = 'Ascendente'
+            document.getElementById('A-Z').value = 'abc'
             document.getElementById('Breed').value = 'Breeds'
             return{
                 ...state,
