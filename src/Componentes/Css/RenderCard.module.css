@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.img{
+    height: 100px;
+}
 
-
-
+.busqueda{
+    font-family: 'Acme', sans-serif;
+}

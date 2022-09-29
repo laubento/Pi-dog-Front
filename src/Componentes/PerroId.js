@@ -26,7 +26,7 @@ export default function PerroId(){
                 <div className={style.container}>
                     <div>
                         <div className={style.containerimg}>
-                            <img className={style.img} src={Dog.img} alt="Img-Dog"/>
+                            <img className={style.img} src={Dog.img == '' ? 'https://img.pixers.pics/pho_wat(s3:700/FO/30/92/43/30/700_FO30924330_0a69d232ef220ba85df06b617a4b7b7b.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/posters-sombra-de-perro.jpg.jpg' : Dog.img} alt="Img-Dog"/>
                         </div>
                         <Link className={style.link} to={'/home'}><div className={style.Button}>Home</div></Link>
                     </div>
@@ -36,8 +36,8 @@ export default function PerroId(){
                         </div>
                         <h1>{Dog.peso !== undefined ? 'Weight: ' + Dog.peso : '...'}</h1>
                         <h1>{Dog.altura !== undefined ? 'Height: ' + Dog.altura : '...'}</h1>
-                        <h1>{Dog.anoDeVida !== undefined ?'Life expectancy: ' + Dog.anoDeVida : '...'}</h1>
-                        <h1>{Dog.criadoPara !== undefined ?'Raised for: ' + Dog.criadoPara : "..."}</h1>
+                        <h1>{Dog.anoDeVida !== undefined ? 'Life expectancy: ' + Dog.anoDeVida : null}</h1>
+                        <h1>{Dog.criadoPara !== undefined ? 'Raised for: ' + Dog.criadoPara : null}</h1>
                         <div className={style.informacion}>
                             <h1>Temperament</h1>
                         </div>

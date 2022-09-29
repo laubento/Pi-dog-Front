@@ -18,7 +18,11 @@ export default function RenderCard({pag}){
                         Peso={e.peso} 
                     />
                 </div>
-            )}) : <h1> No se encontro el perrito </h1> }
+            )}) : <div>
+
+                    <h1 className={style.busqueda}> No se encontro el perrito </h1>
+                    <img className={style.img} src="https://www.perroperdido.mx/wp-content/uploads/2018/11/logo-perro-perdido-mx.png" alt="Busqueda"/>
+                </div> }
         </div>  
     )
 }

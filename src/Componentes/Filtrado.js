@@ -53,7 +53,7 @@ export default function Filtrado({setcambios, setpageDogs, setpageDogsInit, setp
                 <option value={'createForMe'}>Create for me</option>
             </select>
             <select defaultValue={'Breeds'} id="Breed" onChange={e => {verificacionTemperamento(e)}}>
-                <option id="Breeds" disabled  value={'Breeds'}> Breeds </option>
+                <option id="Breeds" disabled  value={'Breeds'}> Temperaments </option>
                 {allTemperament.length > 0 ? allTemperament.map((e,i) => {
                     return(
                         <option key={i} value={e.name}>{e.name}</option>
