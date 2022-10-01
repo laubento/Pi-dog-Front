@@ -42,6 +42,7 @@ export default function Filtrado({setcambios, setpageDogs, setpageDogsInit, setp
         setpage(0)
     }
 
+
     return(
 
     <div className={style.containerPrincipal}>
