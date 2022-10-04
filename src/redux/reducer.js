@@ -67,14 +67,12 @@ export default function reducer(state = initialState, action){
             let array = []
             for(let i = 0; i < state.allDogs.length; i++){
                 if(state.allDogs[i].temperamento !== undefined){
-                    console.log('a')
                     for(let a = 0; a < state.allDogs[i].temperamento.length; a++){
                         if(state.allDogs[i].temperamento[a] === action.payload){
                             array.push(state.allDogs[i])
                         }
                     }
                 }else{
-                    console.log('b')
                     for(let a = 0; a < state.allDogs[i].temperamentos.length; a++){
                         if(state.allDogs[i].temperamentos[a].name === action.payload){
                             array.push(state.allDogs[i])
